@@ -36,6 +36,8 @@ const Profile = () => {
 
       setUser(res.data.user);
 
+      console.log(res.data.user)
+
       toast.success("Welcome back 👋", {
         style: {
           background: "#fff",

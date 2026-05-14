@@ -29,6 +29,8 @@ export default function ProfilePage() {
 
       const data = await res.json();
 
+      console.log(data.user)
+
       setUser({
         ...data,
         name: data.name || data.displayName,
@@ -70,6 +72,7 @@ export default function ProfilePage() {
       else if (editingField === "email") payload.email = draft;
       else if (editingField === "phone") payload.phone = draft;
       else if (editingField === "lga") payload.lga = draft;
+      else if (editingField === "school") payload.school = draft;
       else if (editingField === "state") payload.state = draft;
       else if (editingField === "category") payload.category = draft;
 
@@ -81,6 +84,7 @@ export default function ProfilePage() {
         },
         body: JSON.stringify(payload),
       });
+
 
       const data = await res.json();
 
@@ -130,7 +134,7 @@ export default function ProfilePage() {
     const value = user.user?.[field] ?? "";
 
     return (
-      <div className="bg-white border border-green-100 rounded-2xl p-5 shadow-sm hover:shadow-lg transition-all duration-300">
+      <div className="bg-white border border-green-100 rounded-2xl p-5 mt-12 shadow-sm hover:shadow-lg transition-all duration-300">
 
         {!isEditing ? (
           <div className="flex items-center justify-between">
@@ -209,7 +213,7 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50 flex justify-center p-6">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50 flex justify-center p-6 mt-12">
 
       <div className="w-full max-w-2xl space-y-6">
 
@@ -233,8 +237,12 @@ export default function ProfilePage() {
         {/* FIELDS */}
         <div className="space-y-4">
           <Field label="Surname" field="surname" />
-          <Field label="Other Names" field="otherNames" />
+          <Field label="Other Names" field="othernames" />
           <Field label="Email Address" field="email" />
+          <Field label="LGA" field="lga" />
+          <Field label="Phone" field="phone" />
+          <Field label="School" field="school" />
+          <Field label="State" field="state" />
           <Field label="Role" field="role" />
         </div>
 

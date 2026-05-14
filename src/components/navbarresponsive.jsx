@@ -3,14 +3,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import {
   FaHome,
   FaUser,
-  FaChartBar,
-  FaBook,
   FaBars,
   FaTimes,
   FaBell,
   FaTrophy,
-  FaGamepad,
-  FaFire,
   FaBolt,
   FaCog,
   FaWallet,
@@ -29,7 +25,7 @@ export default function NavbarandAside() {
     { name: "Payments", path: "/pay", icon: <FaWallet /> },
     { name: "Leaderboard", path: "/leaderboard", icon: <FaTrophy /> },
     { name: "Settings", path: "/settings", icon: <FaCog /> },
-    { name: "", icon: <LogoutIcon /> },
+    { name: "Logout", path: "/", icon: <LogoutIcon /> },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -44,35 +40,72 @@ export default function NavbarandAside() {
           <div className="flex items-center gap-2">
             <img
               src="/logo.jpg"
+              alt="logo"
               className="w-9 h-9 rounded-full border"
             />
+
             <h1 className="font-bold text-green-700">
-               Dashboard
+              Dashboard
             </h1>
           </div>
 
-          {/* DESKTOP LINKS */}
-          <div className="hidden md:flex items-center gap-6">
+          {/* ================= DESKTOP ICON NAV ================= */}
+          <div className="hidden md:flex items-center gap-3">
+
             {links.map((link, i) => (
               <Link
                 key={i}
                 to={link.path}
-                className={`flex items-center gap-2 text-sm font-medium transition ${
+                title={link.name}
+                className={`relative group p-3 mx-4 rounded-xl text-lg transition-all duration-300 ${
                   isActive(link.path)
-                    ? "text-green-600"
-                    : "text-gray-600 hover:text-green-600"
+                    ? "bg-green-100 text-green-700"
+                    : "text-gray-600 hover:bg-gray-100 hover:text-green-600"
                 }`}
               >
+
+                {/* ICON */}
                 {link.icon}
-                {link.name}
+
+                {/* TOOLTIP */}
+                <span
+                  className="
+                    absolute 
+                    left-1/2 
+                    -translate-x-1/2 
+                    top-14
+                    opacity-0
+                    group-hover:opacity-100
+                    scale-95
+                    group-hover:scale-100
+                    transition-all
+                    duration-200
+                    bg-black
+                    text-white
+                    text-xs
+                    px-3
+                    py-1
+                    rounded-md
+                    whitespace-nowrap
+                    pointer-events-none
+                    z-50
+                  "
+                >
+                  {link.name}
+                </span>
+
               </Link>
             ))}
+
           </div>
 
-          {/* RIGHT ICONS */}
+          {/* ================= RIGHT SECTION ================= */}
           <div className="flex items-center gap-4">
 
-            <FaBell className="text-gray-600 text-lg cursor-pointer" />
+            {/* NOTIFICATION */}
+            <button className="relative">
+              <FaBell className="text-gray-600 text-lg cursor-pointer hover:text-green-600 transition" />
+            </button>
 
             {/* MOBILE MENU BUTTON */}
             <button
@@ -109,13 +142,16 @@ export default function NavbarandAside() {
             >
 
               {/* HEADER */}
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center justify-between mb-8">
+
                 <div className="flex items-center gap-2">
                   <img
                     src="/logo.jpg"
+                    alt="logo"
                     className="w-10 h-10 rounded-full border"
                   />
-                  <span className="font-bold text-green-700">
+
+                  <span className="font-bold text-green-700 text-lg">
                     Challengehub
                   </span>
                 </div>
@@ -126,6 +162,7 @@ export default function NavbarandAside() {
                 >
                   <FaTimes />
                 </button>
+
               </div>
 
               {/* LINKS */}
@@ -136,21 +173,28 @@ export default function NavbarandAside() {
                     key={i}
                     to={link.path}
                     onClick={() => setOpen(false)}
-                    className={`flex items-center gap-3 p-3 rounded-lg transition ${
+                    className={`flex items-center gap-4 p-3 rounded-xl transition-all ${
                       isActive(link.path)
                         ? "bg-green-100 text-green-700"
                         : "text-gray-700 hover:bg-gray-100"
                     }`}
                   >
-                    {link.icon}
-                    {link.name}
+
+                    <span className="text-lg">
+                      {link.icon}
+                    </span>
+
+                    <span className="font-medium">
+                      {link.name}
+                    </span>
+
                   </Link>
                 ))}
 
               </div>
 
               {/* FOOTER */}
-              <div className="absolute bottom-5 text-xs text-gray-400">
+              <div className="absolute bottom-5 left-5 text-xs text-gray-400">
                 Challengehub Dashboard v1.0
               </div>
 

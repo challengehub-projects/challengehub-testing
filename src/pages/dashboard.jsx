@@ -30,6 +30,10 @@ export default function Dashboard() {
 
       setUser(res.data.user);
 
+      localStorage.setItem("Email", res.data.user.email);
+
+      console.log(res.data.user.email);
+
       toast.success("Welcome back 👋", {
         style: {
           background: "#fff",

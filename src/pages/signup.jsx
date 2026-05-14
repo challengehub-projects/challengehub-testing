@@ -11,6 +11,7 @@ import {
   FaEye,
   FaEyeSlash,
   FaList,
+  FaSchool
 } from "react-icons/fa";
 import { SelectInput } from "../components/selectinput";
 
@@ -30,6 +31,7 @@ export default function Signup() {
     password: "",
     confirmPassword: "",
     category: "",
+    school: "",
     state: "",
     lga: "",
     phone: "",
@@ -56,6 +58,7 @@ export default function Signup() {
       "password",
       "confirmPassword",
       "phone",
+      "school",
       "state",
       "lga",
       "category",
@@ -80,6 +83,7 @@ export default function Signup() {
           password: form.password,
           category: form.category,
           state: form.state,
+          school: form.school,
           lga: form.lga,
           phone: form.phone,
         }
@@ -177,6 +181,16 @@ export default function Signup() {
             name="otherNames"
             placeholder="Other names"
             value={form.otherNames}
+            onChange={handleChange}
+          />
+
+          {/* EMAIL */}
+          <Input
+            icon={<FaSchool className="text-gray-500 mr-2" />}
+            name="school"
+            type="text"
+            placeholder="School"
+            value={form.school}
             onChange={handleChange}
           />
 

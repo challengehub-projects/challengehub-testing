@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FiLock, FiCheckCircle, FiShield } from "react-icons/fi";
+import toast from "react-hot-toast";
 
-const PaymentPage = ({ email = "student@example.com", amount = 1000 }) => {
+const PaymentPage = () => {
   const [isProcessing, setIsProcessing] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [amount, setAmount] = useState(1500); // Amount in Naira
 
-  const handlePayment = async () => {
+ const email = localStorage.getItem("Email") || "";
+ console.log(email)
+
+  const handlePayment = async (email, amount) => {
     try {
       setIsProcessing(true);
       const res = await axios.post("http://localhost:5000/api/payment/initialize", {
-        email: email, // Dynamic email
+        email, // Dynamic email
         amount: amount * 100, // Paystack expects amount in Kobo/cents
       });
 
@@ -27,7 +33,7 @@ const PaymentPage = ({ email = "student@example.com", amount = 1000 }) => {
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
       <div className="max-w-md w-full bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
-        
+
         {/* HEADER SECTION */}
         <div className="bg-green-600 p-8 text-center text-white">
           <div className="bg-white/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
@@ -63,11 +69,10 @@ const PaymentPage = ({ email = "student@example.com", amount = 1000 }) => {
           <button
             onClick={handlePayment}
             disabled={isProcessing}
-            className={`w-full mt-8 py-4 rounded-2xl font-bold text-white transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-200 ${
-              isProcessing 
-                ? "bg-green-400 cursor-not-allowed" 
-                : "bg-green-600 hover:bg-green-700 active:scale-95"
-            }`}
+            className={`w-full mt-8 py-4 rounded-2xl font-bold text-white transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-200 ${isProcessing
+              ? "bg-green-400 cursor-not-allowed"
+              : "bg-green-600 hover:bg-green-700 active:scale-95"
+              }`}
           >
             {isProcessing ? (
               <>
