@@ -13,7 +13,7 @@ import {
 
 export default function Dashboard() {
   const [user, setUser] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   const token = localStorage.getItem("token");
 
