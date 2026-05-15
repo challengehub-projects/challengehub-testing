@@ -98,7 +98,7 @@ export default function Dashboard() {
           </div>
 
           <h1 className="text-2xl md:text-3xl font-bold">
-            Welcome back, {user.surname} 👋
+            Welcome back, CEO 👋
           </h1>
 
           <p className="mt-2 text-green-100">
