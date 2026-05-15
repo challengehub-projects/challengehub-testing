@@ -102,7 +102,7 @@ export default function Dashboard() {
           </h1>
 
           <p className="mt-2 text-green-100">
-            AI-powered Student Dashboard — Challengehub Intelligence System
+           Student Dashboard — Challengehub Intelligence System
           </p>
 
           <div className="mt-4 flex flex-wrap gap-4 text-sm">
