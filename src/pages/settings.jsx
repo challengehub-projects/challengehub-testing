@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function ProfilePage() {
 
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(true);
   const [editingField, setEditingField] = useState(null);
   const [draft, setDraft] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
