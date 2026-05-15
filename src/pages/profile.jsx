@@ -18,8 +18,8 @@ import toast from "react-hot-toast";
 
 const Profile = () => {
 
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   const token = localStorage.getItem("token");
 
