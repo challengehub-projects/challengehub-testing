@@ -62,7 +62,7 @@ const ExamPage = () => {
             const res = await axios.post("http://localhost:5000/api/auth/user", { uid });
             const userData = res.data;
 
-            await axios.post("http://localhost:5000/api/submit", {
+          //  await axios.post("http://localhost:5000/api/submit", {
                 name: `${userData.surname} ${userData.othernames}`,
                 email: userData.email,
                 score,
