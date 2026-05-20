@@ -12,15 +12,15 @@ import {
 } from "react-icons/fa";
 
 export default function Dashboard() {
-  const [user, setUser] = useState(true);
-  const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const token = localStorage.getItem("token");
 
   const fetchDashboard = async () => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/dashboard",
+        "https://challengehub-backend.onrender.com/api/dashboard",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -32,8 +32,6 @@ export default function Dashboard() {
 
       localStorage.setItem("Email", res.data.user.email);
 
-      console.log(res.data.user.email);
-
       toast.success("Welcome back 👋", {
         style: {
           background: "#fff",
@@ -43,7 +41,7 @@ export default function Dashboard() {
       });
     } catch (err) {
       toast.error(
-        err.response?.data?.message || "Unauthorized access",
+        err.response.message || "Unauthorized access",
         {
           style: {
             background: "#fff",
@@ -98,11 +96,11 @@ export default function Dashboard() {
           </div>
 
           <h1 className="text-2xl md:text-3xl font-bold">
-            Welcome back, CEO 👋
+            Welcome back, {user.surname} 👋
           </h1>
 
           <p className="mt-2 text-green-100">
-           Student Dashboard — Challengehub Intelligence System
+            AI-powered Student Dashboard — Challengehub Intelligence System
           </p>
 
           <div className="mt-4 flex flex-wrap gap-4 text-sm">

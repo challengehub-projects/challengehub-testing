@@ -16,7 +16,7 @@ const ChallengePage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-green-50 flex items-center justify-center p-6">
+    <div className="min-h-screen bg-gradient-to-br my-12 from-emerald-50 via-white to-green-50 flex items-center justify-center p-6">
 
       <div className="w-full max-w-3xl bg-white rounded-3xl shadow-2xl border border-green-100 overflow-hidden">
 

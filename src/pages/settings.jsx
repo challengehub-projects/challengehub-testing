@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 
 export default function ProfilePage() {
 
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(null);
   const [editingField, setEditingField] = useState(null);
   const [draft, setDraft] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
@@ -21,7 +21,7 @@ export default function ProfilePage() {
     try {
       const token = await getToken();
 
-      const res = await fetch("http://localhost:5000/api/profile", {
+      const res = await fetch("https://challengehub-backend.onrender.com/api/profile", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -76,7 +76,7 @@ export default function ProfilePage() {
       else if (editingField === "state") payload.state = draft;
       else if (editingField === "category") payload.category = draft;
 
-      const res = await fetch("http://localhost:5000/api/auth/update", {
+      const res = await fetch("https://challengehub-backend.onrender.com/api/auth/update", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -111,7 +111,7 @@ export default function ProfilePage() {
     try {
       const token = await getToken();
 
-      const res = await fetch("http://localhost:5000/api/auth/delete", {
+      const res = await fetch("https://challengehub-backend.onrender.com/api/auth/delete", {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,

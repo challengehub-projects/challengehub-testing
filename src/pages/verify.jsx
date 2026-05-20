@@ -15,7 +15,7 @@ const VerifyPayment = () => {
 
       try {
         // Wait a tiny bit so the user actually sees the verification animation (better UX)
-        const response = await axios.post("http://localhost:5000/api/payment/verify", {
+        const response = await axios.post("https://challengehub-backend.onrender.com/api/payment/verify", {
           reference,
           uid,
         });

@@ -1,6 +1,7 @@
+import { React, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import Navbar from "./components/navbar";
+/* import Navbar from "./components/navbar";
 import Home from "./pages/home";
 import Footer from "./components/footer";
 import Login from "./pages/login";
@@ -23,7 +24,37 @@ import ChallengePage from "./pages/challenge";
 import AboutPage from "./pages/about";
 import ContactPage from "./pages/contact";
 import AdministrationPage from "./pages/administrations";
-import LearnMorePage from "./pages/learnmore";
+import LearnMorePage from "./pages/learnmore"; */
+
+// Standard Imports (Keep these normal so your layout and protection work instantly)
+import ProtectedRoute from "./auths/protectedRoute";
+import Navbar from "./components/navbar";
+import Footer from "./components/footer";
+import NavbarandAside from "./components/navbarresponsive";
+import DashboardFooter from "./components/dashboardFooter";
+
+// Lazy Loaded Pages
+const Home = lazy(() => import("./pages/home"));
+const Login = lazy(() => import("./pages/login"));
+const Signup = lazy(() => import("./pages/signup"));
+const Dashboard = lazy(() => import("./pages/dashboard"));
+const Leaderboard = lazy(() => import("./pages/leaderboard"));
+const PayButton = lazy(() => import("./pages/pay"));
+const VerifyPayment = lazy(() => import("./pages/verify"));
+const ExamPage = lazy(() => import("./pages/exampage"));
+const Results = lazy(() => import("./pages/results"));
+const Profile = lazy(() => import("./pages/profile"));
+const Settings = lazy(() => import("./pages/settings"));
+const FreeTestPage = lazy(() => import("./pages/freetestPage"));
+const ProfilePage = lazy(() => import("./pages/settings"));
+const ChallengePage = lazy(() => import("./pages/challenge"));
+const AboutPage = lazy(() => import("./pages/about"));
+const ContactPage = lazy(() => import("./pages/contact"));
+const AdministrationPage = lazy(() => import("./pages/administrations"));
+const LearnMorePage = lazy(() => import("./pages/learnmore"));
+
+// Lazy Loaded Trash/Misc Components
+const PaymentSuccess = lazy(() => import("./trash/paySuccess"));
 
 
 

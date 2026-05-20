@@ -14,7 +14,7 @@ const PaymentPage = () => {
   const handlePayment = async (email, amount) => {
     try {
       setIsProcessing(true);
-      const res = await axios.post("http://localhost:5000/api/payment/initialize", {
+      const res = await axios.post("https://challengehub-backend.onrender.com/api/payment/initialize", {
         email, // Dynamic email
         amount: amount * 100, // Paystack expects amount in Kobo/cents
       });

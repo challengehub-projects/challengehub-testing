@@ -58,18 +58,18 @@ const ExamPage = () => {
         });
 
         try {
-            //const uid = localStorage.getItem("userId");
-           // const res = await axios.post("http://localhost:5000/api/auth/user", { uid });
-           // const userData = res.data;
+            const uid = localStorage.getItem("userId");
+            const res = await axios.post("https://challengehub-backend.onrender.com/api/auth/user", { uid });
+            const userData = res.data;
 
-          /*  await axios.post("http://localhost:5000/api/submit", {
+            await axios.post("https://challengehub-backend.onrender.com/api/submit", {
                 name: `${userData.surname} ${userData.othernames}`,
                 email: userData.email,
                 score,
                 total: questions.length,
                 percent: Math.round((score / questions.length) * 100),
                 timeUsed: 300 - timeLeft,
-            }); */
+            });
 
             toast.success("Exam submitted successfully!");
             navigate("/results", { state: { questions, currentAnswers } });

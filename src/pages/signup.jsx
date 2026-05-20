@@ -75,7 +75,7 @@ export default function Signup() {
       setLoading(true);
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/signup",
+        "https://challengehub-backend.onrender.com/api/auth/signup",
         {
           surname: form.surname,
           otherNames: form.otherNames,

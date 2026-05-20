@@ -18,8 +18,8 @@ import toast from "react-hot-toast";
 
 const Profile = () => {
 
-  const [user, setUser] = useState(true);
-  const [loading, setLoading] = useState(false);
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const token = localStorage.getItem("token");
 
@@ -28,7 +28,7 @@ const Profile = () => {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/api/profile",
+        "https://challengehub-backend.onrender.com/api/profile",
         {
           headers: { Authorization: `Bearer ${token}` },
         }
