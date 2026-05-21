@@ -63,9 +63,9 @@ export default function Leaderboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br mt-12 from-green-50 via-white to-emerald-50 p-4 md:p-6 pt-24">
-      {/* HEADER */}
+    
       <div className="max-w-6xl mx-auto mb-8">
-        {/* FIX: Handled mobile shifting with flex-col sm:flex-row */}
+        
         <div className="bg-white border border-green-100 rounded-3xl shadow p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold text-green-700 flex items-center gap-3">
@@ -81,14 +81,14 @@ export default function Leaderboard() {
         </div>
       </div>
 
-      {/* LOADING */}
+  
       {loading ? (
         <div className="flex justify-center py-32 text-green-600">
           <FiLoader className="text-4xl animate-spin" />
         </div>
       ) : (
         <div className="max-w-6xl mx-auto">
-          {/* 🏆 PODIUM TOP 3 */}
+          
           {topThree.length > 0 && (
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
               {topThree.map((u, i) => {
@@ -99,19 +99,19 @@ export default function Leaderboard() {
                     key={u.id || u.uid}
                     className={`relative p-6 rounded-3xl shadow-lg border text-center transition-all hover:scale-105 ${getPodiumStyle(i)}`}
                   >
-                    {/* RANK ICON */}
+                  
                     <div className="flex justify-center mb-3">
                       {i === 0 && <FaCrown className="text-4xl" />}
                       {i === 1 && <FaMedal className="text-4xl" />}
                       {i === 2 && <FaMedal className="text-4xl" />}
                     </div>
 
-                    {/* NAME */}
+                    
                     <h2 className="text-xl font-bold truncate px-2">{u.name}</h2>
                     <p className="mt-1 text-sm font-semibold">{u.percent}%</p>
                     <p className="text-xs opacity-90 mt-2">Time: {u.timeUsed}s</p>
 
-                    {/* YOU BADGE */}
+                
                     {isUser && (
                       <span className="absolute top-3 right-3 bg-black text-white text-xs px-2 py-1 rounded-full font-bold">
                         YOU
@@ -123,14 +123,14 @@ export default function Leaderboard() {
             </div>
           )}
 
-          {/* 📊 TABLE */}
+          
           <div className="bg-white border border-green-100 rounded-3xl shadow overflow-hidden">
             <div className="bg-green-600 text-white p-4 font-bold flex items-center gap-2">
               <FiUsers />
               Full Rankings
             </div>
 
-            {/* FIX: Handled small mobile screens using overflow-x-auto container */}
+            
             <div className="overflow-x-auto">
               <table className="w-full text-sm min-w-[500px]">
                 <thead className="bg-green-50 text-green-700">
