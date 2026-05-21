@@ -217,6 +217,8 @@ export default function Leaderboard() {
       const res = await axios.get("https://challengehub-backend.onrender.com/api/leaderboard");
       const rawData = res.data;
 
+       console.log(rawData)
+
       // FIX: Dedup users by 'uid' so the same user updates instead of listing twice
       const uniqueUsersMap = {};
       rawData.forEach((item) => {
