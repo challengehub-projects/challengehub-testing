@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+/*import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
 import { FaTrophy, FaCrown, FaMedal } from "react-icons/fa";
@@ -196,9 +196,9 @@ export default function Leaderboard() {
 }
 
 
+*/
 
 
-/* 
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 
@@ -394,4 +394,4 @@ export default function Leaderboard() {
     </div>
   );
 }
- */
+ 
