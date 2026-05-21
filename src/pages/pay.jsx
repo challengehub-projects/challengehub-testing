@@ -19,6 +19,9 @@ const PaymentPage = () => {
         amount: amount * 100, // Paystack expects amount in Kobo/cents
       });
 
+
+      console.log(res.data)
+
       const reference = res.data.reference;
       localStorage.setItem("reference", reference);
 
