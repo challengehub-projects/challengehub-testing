@@ -346,6 +346,7 @@ export default function Leaderboard() {
                 <tbody>
                   {rest.map((u) => {
                     const isUser = u.uid === currentUserId;
+                    console.log(u)
 
                     return (
                       <tr
