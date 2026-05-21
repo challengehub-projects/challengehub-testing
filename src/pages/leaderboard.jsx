@@ -264,6 +264,8 @@ export default function Leaderboard() {
     return "bg-gradient-to-b from-orange-300 to-orange-500 text-white"; // BRONZE
   };
 
+  console.log(data.length)
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50 p-4 md:p-6 pt-24">
 
