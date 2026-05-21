@@ -20,7 +20,7 @@ const PaymentPage = () => {
       });
 
 
-      console.log(res.data)
+      console.log(res)
 
       const reference = res.data.reference;
       localStorage.setItem("reference", reference);
