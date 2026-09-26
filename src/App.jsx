@@ -59,7 +59,7 @@ const ContactPage = lazy(() => import("./pages/contact"));
 const AdministrationPage = lazy(() => import("./pages/administrations"));
 const LearnMorePage = lazy(() => import("./pages/learnmore"));
 const CompetitionNotifications = lazy(() => import("./pages/notifications"));
-const ComminutyHub = lazy(() => import("./pages/community"));
+const ComminutyHub = lazy(() => import("./pages/Community"));
 
 // Lazy Loaded Trash/Misc Components
 const PaymentSuccess = lazy(() => import("./trash/paySuccess"));
