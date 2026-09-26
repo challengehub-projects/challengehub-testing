@@ -87,7 +87,7 @@ export default function ProfilePage() {
       const token = await getToken();
 
       // Send to your backend
-      const res = await fetch("http://localhost:3000/api/auth/update", {
+      const res = await fetch("https://challengehub-backend-o6ok.onrender.com/api/auth/update", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
