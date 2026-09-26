@@ -41,7 +41,7 @@ export default function Dashboard() {
 
     try {
       const res = await axios.get(
-        "http://localhost:3000/api/dashboard",
+        "https://challengehub-backend-o6ok.onrender.com/api/dashboard",
         {
           headers: {
             Authorization: `Bearer ${token}`,
