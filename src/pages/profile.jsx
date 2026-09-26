@@ -20,7 +20,7 @@ import {
 
 import toast from "react-hot-toast";
 
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://challengehub-backend-o6ok.onrender.com";
 
 const PROFILE_URL = `${API_BASE_URL}/api/profile`;
 const RESULT_URL = `${API_BASE_URL}/api/exam/condensed-result`;

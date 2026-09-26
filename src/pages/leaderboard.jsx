@@ -6,7 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { FaTrophy, FaCrown, FaMedal } from "react-icons/fa";
 import { FiUsers, FiLoader } from "react-icons/fi";
 
-const BACKEND_BASE_URL = "http://localhost:3000";
+const BACKEND_BASE_URL = "https://challengehub-backend-o6ok.onrender.com";
 
 const PROFILE_URL = `${BACKEND_BASE_URL}/api/profile`;
 
