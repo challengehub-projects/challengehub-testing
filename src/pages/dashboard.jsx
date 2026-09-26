@@ -102,7 +102,7 @@ export default function Dashboard() {
 
     try {
       const res = await axios.get(
-        "http://localhost:3000/api/exam/condensed-result",
+        "https://challengehub-backend-o6ok.onrender.com/api/exam/condensed-result",
         {
           params: {
             email,
