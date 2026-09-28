@@ -26,6 +26,7 @@ export default function Leaderboard() {
   ========================================================= */
 
   const fetchProfile = async () => {
+    console.log("Fetching current user profile...");
     try {
       const res = await axios.get(PROFILE_URL, {
         headers: {
@@ -34,6 +35,8 @@ export default function Leaderboard() {
       });
 
       const user = res.data?.user;
+
+      console.log(profileImage, "Current user profile image:", user);
 
       if (user) {
         const image =
