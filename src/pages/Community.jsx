@@ -478,14 +478,14 @@ const CommunityHub = () => {
             <ArrowLeft size={18} />
           </button>
 
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-green-700 flex items-center justify-center shadow-lg shrink-0">
+      {/*     <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-green-700 flex items-center justify-center shadow-lg shrink-0">
 
             <MessageCircle
               size={19}
               className="text-white"
             />
 
-          </div>
+          </div> */}
 
           <div className="min-w-0">
 

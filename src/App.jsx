@@ -178,13 +178,6 @@ function App() {
         } />
 
 
-<Route path="/leaderboards" element={
-          <ProtectedRoute>
-            <NavbarandAside />
-            <ChooseLeaderboardPage />
-            <DashboardFooter />
-          </ProtectedRoute>
-        } />
 
 
 
@@ -196,17 +189,6 @@ function App() {
           </ProtectedRoute>
         } />
 
-        <Route path="/results" element={
-          <ProtectedRoute>
-            <Results />
-          </ProtectedRoute>
-        } />
-
-        <Route path="/success" element={
-          <ProtectedRoute>
-            <PaymentSuccess />
-          </ProtectedRoute>
-        } />
 
         <Route path="/notify" element={
           <ProtectedRoute>
@@ -254,20 +236,7 @@ function App() {
           </ProtectedRoute>
         } />
 
-        <Route path="/pay" element={
-          <ProtectedRoute>
-            <NavbarandAside />
-            <PayButton />
-            <DashboardFooter />
-          </ProtectedRoute>
-        } />
 
-
-        <Route path="/verify" element={
-          <ProtectedRoute>
-            <VerifyPayment />
-          </ProtectedRoute>
-        } />
 
         <Route path="/challenge" element={
           <ProtectedRoute>
